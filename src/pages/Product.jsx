@@ -8,7 +8,6 @@ import ProductView from '../components/ProductView'
 import productData from '../assets/fake-data/products'
 
 //!Tablist
-
 import Tab_2 from '../components/Tabs/Tab_2'
 
 const Product = props => {
