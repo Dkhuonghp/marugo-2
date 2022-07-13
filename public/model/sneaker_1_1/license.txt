@@ -1,0 +1,11 @@
+Model Information:
+* title:	sneakers
+* source:	https://sketchfab.com/3d-models/sneakers-ceca20b4364849048f1ab145265d4e8f
+* author:	bitwolf (https://sketchfab.com/bitwolf)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "sneakers" (https://sketchfab.com/3d-models/sneakers-ceca20b4364849048f1ab145265d4e8f) by bitwolf (https://sketchfab.com/bitwolf) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

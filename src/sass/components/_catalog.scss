@@ -1,6 +1,6 @@
 .catalog {
     @include flex(flex-start, flex-start);
-    margin-top: 15%;
+    margin-top: 70px;
 
     @include tablet {
         flex-direction: column;

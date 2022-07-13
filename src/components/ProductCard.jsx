@@ -11,25 +11,25 @@ import Button from './Button'
 
 import numberWithCommas from '../utils/numberWithCommas'
 
+import Nike from "../assets/images/products/nike-air.webp"
+
 const ProductCard = props => {
 
     const dispatch = useDispatch()
 
     return (
         <div className="product-card">
-                <div className="product-card__image">
-                    <model-viewer className="scene__model" src={props.img01} camera-controls ar ios-src={props.img01}></model-viewer>
-                    {/* <img src={props.img02} alt="" /> */}
-                </div>
-                <h3 className="product-card__name">{props.name}</h3>
-                <div className="product-card__price">
-                    ¥ {numberWithCommas(props.price)}
-                    {/* <span className="product-card__price__old">
-                        <del>{numberWithCommas(399000)}</del>
-                    </span> */}
-                </div>
             <Link to={`/catalog/${props.slug}`}>
-                <Button>詳細</Button>
+                <div className="product-card__image">
+                    {/* <model-viewer className="scene__model" src={props.img01} ios-src={props.img02}></model-viewer> */}
+                    <img src={Nike} alt="image" />
+                </div>
+                <div>
+                    <div className="product-card__name">{props.name}</div>
+                    <div className="product-card__price">
+                        ¥ {numberWithCommas(props.price)}
+                    </div>
+                </div>
             </Link>
             {/* <div className="product-card__btn">
                 <Button

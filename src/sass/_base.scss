@@ -31,23 +31,25 @@ a {
     color: unset;
 }
 
-a:hover {
-    color: $main-color;
-}
+// a:hover {
+//     color: $main-color;
+// }
 
 img {
     max-width: 100%;
 }
 
 @each $color, $val in $colors {
-    .color-#{$color} {
-        color: $val;
-    }
+    // .color-#{$color} {
+    //     color: $val;
+    // }
 
     .bg-#{$color} {
         background-color: #3C9DFF;
         border-radius: 5px;
-        // width: 50%;
+        &:nth-child(2) {
+            background: white;
+        }        
     }
 }
 .circle {
@@ -56,7 +58,8 @@ img {
 
 @each $val in $numbers {
     .grid-col-#{$val} {
-        grid-template-columns: repeat($val, 1fr);
+        // grid-template-columns: repeat($val, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -71,7 +74,8 @@ img {
 @each $val in $numbers {
     .grid-col-sm-#{$val} {
         @include mobile {
-            grid-template-columns: repeat($val, 1fr);
+            // grid-template-columns: repeat($val, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }

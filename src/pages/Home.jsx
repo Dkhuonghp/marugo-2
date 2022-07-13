@@ -20,13 +20,13 @@ const Home = () => {
             <HeroSlider
                 data={heroSliderData}
                 control={true}
-                auto={false}
-                timeOut={1000}
+                auto={true}
+                timeOut={5000}
             />
             {/* end hero slider */}
 
             {/* policy section */}
-            <Section>
+            {/* <Section>
                 <SectionBody>
                     <Grid
                         col={4}
@@ -45,7 +45,7 @@ const Home = () => {
                         }
                     </Grid>
                 </SectionBody>
-            </Section>
+            </Section> */}
             {/* end policy section */}
 
             {/* best selling section */}
@@ -61,7 +61,7 @@ const Home = () => {
                         gap={20}
                     >
                         {
-                            productData.getProducts(10).map((item, index) => (
+                            productData.getProducts(20).map((item, index) => (
                                 <ProductCard
                                     key={index}
                                     img01={item.image01}
@@ -90,7 +90,7 @@ const Home = () => {
                         gap={20}
                     >
                         {
-                            productData.getProducts(10).map((item, index) => (
+                            productData.getProducts(4).map((item, index) => (
                                 <ProductCard
                                     key={index}
                                     img01={item.image01}

@@ -79,87 +79,17 @@ export default function VoucherAndPayment({
   return (
     <>
       <div id="voucher-and-payment">
-        <div id="voucher">
-          <div className="voucher-and-payment-header">
-            クーポンコード
-          </div>
-          <div id="apply-voucher">
-            <input
-              type="text"
-              placeholder="クーポンコード追加"
-              onChange={updateVoucherInput}
-            />
-            <button onClick={applyVoucher}>適用</button>
-          </div>
-          <div id="result-apply-voucher" className={resultApplyVoucherClass}>
-            <p id="alert-result">{alertResult}</p>
-            {/* <p id="result-voucher">{resultVoucher}</p> */}
-          </div>
-        </div>
 
         <div id="payment">
-          <span className="voucher-and-payment-header">お届け先</span>
-
-        </div>
-        <div id="payment">
-          <span className="voucher-and-payment-header">配送方法</span>
-          <>
-            {courses.map(course => (
-              <div key={course.id}>
-                <label className="custom-checkbox">
-                  <input
-                    type="radio"
-                    className="input"
-                    checked={checked === course.id}
-                    onChange={() => setChecked(course.id)}
-                  
-                  />
-                  <span className="custom-checkbox__checkmark">
-                    <i className="bx bx-check"></i>
-                  </span>
-                  <p>
-                    {course.name_1}
-                  </p>
-                </label>
-              </div>
-            ))}
-          </>
-        </div>
-        <div id="payment">
-          <span className="voucher-and-payment-header">お支払い方法</span>
-          <>
-            {payCourses.map(course => (
-              <div key={course.id}>
-                <label className="custom-checkbox">
-                  <input
-                    type="radio"
-                    className="input"
-                    checked={payChecked === course.id}
-                    onChange={() => setPayChecked(course.id)}
-                  
-                  />
-                  <span className="custom-checkbox__checkmark">
-                    <i className="bx bx-check"></i>
-                  </span>
-                  <p>
-                    {course.name}
-                  </p>
-                </label>
-              </div>
-            ))}
-          </>
-        </div>
-
-        <div id="payment">
-          {/* <div className="voucher-and-payment-header">会計</div> */}
+          <div className="voucher-and-payment-header">ご注文金額</div>
           <div className="payment-line">
             <span>商品の小計</span>
             <span id="total-bill"> ¥ {totalCost}</span>
           </div>
-          <div className="payment-line">
+          {/* <div className="payment-line">
             <span>クーポン券</span>
             <span id="total-voucher">- ¥ {totalVoucher}</span>
-          </div>
+          </div> */}
 
           <div className="payment-line">
             <span>消費税額 (10%)</span>

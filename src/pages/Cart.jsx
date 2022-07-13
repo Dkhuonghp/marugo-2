@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-// import Section, {SectionBody, SectionTitle} from '../components/Section'
-// import ProductCard from '../components/ProductCard'
-// import Grid from '../components/Grid'
+import Section, {SectionBody, SectionTitle} from '../components/Section'
+import ProductCard from '../components/ProductCard'
+import Grid from '../components/Grid'
 
 import Helmet from '../components/Helmet'
 import CartItem from '../components/CartItem'
@@ -19,7 +19,7 @@ const Cart = props => {
 
     // const product = productData.getProductBySlug(props.match.params.slug)
 
-    // const relatedProducts = productData.getProducts(8)
+    const relatedProducts = productData.getProducts(8)
     // const [products, setProducts] = useState(DATA);
     // const [totalCost, setTotalCost] = useState(0);
     const [totalVoucher, setTotalVoucher] = useState(0);
@@ -86,7 +86,12 @@ const Cart = props => {
 
     return (
         <Helmet title="Cart">
+            <div className="cart__header">
+                <div className='cart__header-cart'>カート</div>
+                <p>カートに{totalProducts} 点があります</p>
+            </div>
             <div className="cart">
+                
                 {cartItems.length < 1 && (
                     <div className='empty__cart'>
                         <img src={Cart_image} alt="" />
@@ -101,6 +106,7 @@ const Cart = props => {
                 <>
                     {cartItems.length >= 1 && (
                         <>
+                            
                             <div className="cart__list">
                                 {
                                     cartProducts.map((item, index) => (
@@ -111,9 +117,7 @@ const Cart = props => {
                             <div className="cart__info">
                                 
                                 <div className="cart__info__txt">
-                                    <p>
-                                        カートに{totalProducts} 点があります。
-                                    </p>
+                                    
 
                                     <VoucherAndPayment
                                         totalCost={totalPrice.toLocaleString("jpy")}
@@ -136,12 +140,13 @@ const Cart = props => {
                                     </div>
                                 </div>
                                 <div className="cart__info__btn">
-                                    <Link to = '/checkout'>
+                                    <Link to = '/payment'>
                                     
                                         <Button size="block">
-                                            次へ
+                                           購入手続き
                                         </Button>
                                     </Link>
+                                
                                     <Link to="/catalog">
                                         <Button size="block">
                                             ショッピングを続ける
@@ -154,11 +159,9 @@ const Cart = props => {
                     )}
                 </>
             </div>
-
-            
-            {/* <Section>
+            <Section>
                 <h3 className='product-description__title'>
-                    関連商品
+                    この商品の他にこの商品も見ています。
                 </h3>
                 <SectionBody>
                     <Grid
@@ -181,7 +184,8 @@ const Cart = props => {
                         }
                     </Grid>
                 </SectionBody>
-            </Section> */}
+            </Section>
+
         </Helmet>
         
     )

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Kaaro techwear - sneakers
+* source:	https://sketchfab.com/3d-models/kaaro-techwear-sneakers-5f36aec2d23d47ddb2f1d4d3f37209fd
+* author:	strangelet (https://sketchfab.com/strangelet)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Kaaro techwear - sneakers" (https://sketchfab.com/3d-models/kaaro-techwear-sneakers-5f36aec2d23d47ddb2f1d4d3f37209fd) by strangelet (https://sketchfab.com/strangelet) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

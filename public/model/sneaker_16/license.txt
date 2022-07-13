@@ -1,0 +1,11 @@
+Model Information:
+* title:	Merrell Kid's Boot
+* source:	https://sketchfab.com/3d-models/merrell-kids-boot-bbb0764dd0fb4f88b7e6acd6f62d6947
+* author:	inciprocal (https://sketchfab.com/inciprocal.com)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Merrell Kid's Boot" (https://sketchfab.com/3d-models/merrell-kids-boot-bbb0764dd0fb4f88b7e6acd6f62d6947) by inciprocal (https://sketchfab.com/inciprocal.com) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

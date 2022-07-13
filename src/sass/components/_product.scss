@@ -78,9 +78,8 @@
 
         &__item {
             margin-top: 2rem;
-
             &__price {
-                color: $main-color;
+                color: $txt-main-color;
                 font-size: 2rem;
                 font-weight: 600;
             }
@@ -97,16 +96,21 @@
                 &__item {
                     @include flex(center, center);
 
-                    width: 50px;
-                    height: 50px;
-                    // border-radius: 50%;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 4px;
                     border: 1px solid #ebebeb;
+                    background: #ebebeb;
                     cursor: pointer;
                     margin-right: 1rem;
 
+                    model-viewer {
+                        max-height: 70px;
+                    }
+
                     @include mobile {
-                        width: 40px;
-                        height: 40px;
+                        width: 60px;
+                        height: 60px;
                     }
 
                     &.active {
@@ -130,14 +134,13 @@
 
                     &__size {
                         font-size: 1.125rem;
-                        text-transform: uppercase;
                     }
                 }
             }
 
             &__quantity {
                 @include flex(flex-start, flex-start);
-
+                margin-top: 10px;
                 &__btn {
                     @include flex(center, center);
                     width: 30px;
@@ -145,6 +148,12 @@
                     border: 2px solid $txt-second-color;
                     font-size: 1.5rem;
                     cursor: pointer;
+                    &.right {
+                        border-radius: 0px 5px 5px 0
+                    }
+                    &.left {
+                        border-radius: 5px 0 0 5px
+                    }
                 }
 
                 &__input {
@@ -160,9 +169,7 @@
             button {
                 margin-right: 1rem;
                 margin-bottom: 1rem;
-            }
-            &.flex {
-                display: flex;
+                width: 100%;
             }
         }
     }
@@ -175,25 +182,29 @@
     }
     &__border {
         border: 1px solid #ebebeb;
+        border-radius: 4px;
         padding: 10px;
         cursor: pointer;
         &:hover {
-            background: black;
-            color: white;
+            // background: black;
+            border: 1px solid #111111;
+            // color: white;
         }
         &.active {
-            background: black;
-            color: white;
+            // background: black;
+            border: 1px solid #111111;
+
+            // color: white;
         }
     }
 }
 
 .product-description {
-    width: 100%;
+    //width: 100%;
     // padding: 2rem 2rem 3rem;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
+    // height: 400px;
+    // overflow: hidden;
+    // position: relative;
 
     @include mobile {
         display: none;

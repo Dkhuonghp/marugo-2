@@ -48,38 +48,45 @@ const CartItem = (props) => {
                 <div className="cart__item__image">
                     {/* <img src={item.product.image01} alt="" /> */}
                     <model-viewer className="scene__model" src={item.product.image01} camera-controls ar ios-src={item.product.image01}></model-viewer>
-
                 </div>
                 <div className="cart__item__info">
                     <div className="cart__item__info__name">
                         <Link to={`/catalog/${item.slug}`}>
-                            <h3>{`${item.product.title}`}</h3>
-                            <div>カラー：{`${item.color}`}</div>
-                            <div>サイズ：{`${item.size}`}</div>
+                            <div className='cart__item__info__title'>{`${item.product.title}`}</div>
+                            <div className='cart__item__info__color'>カラー：{`${item.color}`}</div>
+                            <div className='cart__item__info__price'>サイズ：{`${item.size}`} 
+                                <span class="test-stock" style={{color:"rgb(115, 169, 98)", marginLeft:"10px",}}>在庫あり 
+                                <i className='bx bx-check'></i></span>
+                            </div>
                         </Link>
                     </div>
-                    <div className="cart__item__info__price">
+                    {/* <div className="cart__item__info__price">
                         ¥ {numberWithCommas(item.price)}
-                    </div>
+                    </div> */}
                     <div className="cart__item__info__quantity">
                         <div className="product__info__item__quantity">
-                            <div className="product__info__item__quantity__btn" onClick={() => updateQuantity('-')}>
+                            <div className="product__info__item__quantity__btn left" onClick={() => updateQuantity('-')}>
                                 <i className="bx bx-minus"></i>
                             </div>
                             <div className="product__info__item__quantity__input">
                                 {quantity}
                             </div>
-                            <div className="product__info__item__quantity__btn" onClick={() => updateQuantity('+')}>
+                            <div className="product__info__item__quantity__btn right" onClick={() => updateQuantity('+')}>
                                 <i className="bx bx-plus"></i>
                             </div>
                         </div>
                     </div>
-                    <div className="cart__item__del" onClick={() => removeCartItem()}>
-                        <i className='bx bx-trash'></i>
+                    <div className="cart__item__icon">
+
+                        <div className="cart__item__icon__her">
+                            <i className="bx bx-heart"></i>
+                        </div>
+                        <div className="cart__item__icon__del" onClick={() => removeCartItem()}>
+                            <i className='bx bx-trash'></i>
+                        </div>
                     </div>
                 </div>
             </div>
-            {modalOpen && <Modal closeModal = { setModalOpen }/>}
         </>
     )
 }

@@ -9,6 +9,13 @@
     overflow: hidden;
     position: relative;
 
+    &:nth-child(2) {
+        background: white;
+        border: 1px solid #DBDBDB;
+        box-shadow: 0 0 12px 4px rgba(224, 224, 224, .4);
+        color: black;
+    }
+
     @include mobile {
         font-size: 1rem;
     }

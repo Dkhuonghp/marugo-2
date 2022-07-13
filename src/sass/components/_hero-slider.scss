@@ -109,8 +109,8 @@
             z-index: 99;
             // pointer-events: none;
             model-viewer {
-                width: auto;
-                height: 660px;
+                width: 500px;
+                height: 500px;
             }
 
             @include tablet {
@@ -175,14 +175,18 @@
         }
 
         &__item ~ &__item {
-            margin-left: 10px;
+            margin-left: 40px;
         }
 
         &__item {
             @include flex(center, center);
             font-size: 2rem;
             cursor: pointer;
-
+            i {
+                border: 1px solid gray;
+                border-radius: 100%;
+                padding: 5px;
+            }
             &:hover {
                 color: $main-color;
             }

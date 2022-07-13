@@ -10,7 +10,7 @@ import Helmet from '../components/Helmet'
 import CartItem from '../components/CartItem'
 import Button from '../components/Button'
 import productData from '../assets/fake-data/products'
-// import numberWithCommas from '../utils/numberWithCommas'
+import numberWithCommas from '../utils/numberWithCommas'
 import Cart_image from "../../src/assets/images/products/cart.png"
 import Payment from "./Payment"
 
@@ -75,13 +75,7 @@ const Cart = props => {
                 <>
                     {cartItems.length >= 1 && (
                         <>
-                            <h1>お支払い方法</h1>
-                            <div className="cart__list">
-                                <label htmlFor="">
-                                    <input type="text" />
-                                </label>
-
-                            </div>
+                            <h1>購入手続き</h1>
 
                             <div className="cart__info">
                                 
@@ -102,9 +96,10 @@ const Cart = props => {
                                         totalTax={Math.round((totalPrice) / 10).toLocaleString("jpy")}
                                     />
 
-                                    {/* <div className="cart__info__txt__price">
-                                        <span>最新の取引額：</span> <span>¥ {numberWithCommas(Number(totalPrice))}</span>
-                                    </div> */}
+                                    <div className="cart__info__txt__price">
+                                        <h2>合計</h2> 
+                                        <h2>¥ {numberWithCommas(Number(Math.round((totalPrice) * 1.1) - totalVoucher))}</h2>
+                                    </div>
                                 </div>
                                 <div className="pay__btn">
                                     <Link to="/cart">

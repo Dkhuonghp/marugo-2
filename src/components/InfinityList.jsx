@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import Grid from './Grid'
 import ProductCard from './ProductCard'
 
+import Catalog from '../pages/Catalog'
+
 const InfinityList = props => {
 
     const perLoad = 6 // items each load
@@ -58,16 +60,19 @@ const InfinityList = props => {
                 smCol={1}
                 gap={20}
             >
+                {/* <Catalog/> */}
                 {
                     data.map((item, index) => (
-                        <ProductCard
-                            key={index}
-                            img01={item.image01}
-                            img02={item.image02}
-                            name={item.title}
-                            price={Number(item.price)}
-                            slug={item.slug}
-                        />
+                        <>
+                            <ProductCard
+                                key={index}
+                                img01={item.image01}
+                                img02={item.image02}
+                                name={item.title}
+                                price={Number(item.price)}
+                                slug={item.slug}
+                            />
+                        </>
                     ))
                 }
             </Grid>

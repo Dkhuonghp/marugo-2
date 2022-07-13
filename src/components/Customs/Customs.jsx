@@ -27,7 +27,6 @@ export default function Customs() {
                 <div id="js-tray-slide" class="tray__slide"></div>
             </div>
         </div>
-
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
 import productData from '../assets/fake-data/products'
+import Logo from "../assets/images/products/logo.svg"
 // import Cart from '../pages/Cart'
 // import CartItem from './CartItem'
 
@@ -13,10 +14,6 @@ const mainNav = [
     {
         display: "カテゴリ",
         path: "/catalog"
-    },
-    {
-        display: "コンタクト",
-        path: "/contact"
     },
     {
         display: "メンズ",
@@ -83,7 +80,7 @@ const Header = () => {
             <div className="container">
                 <div className="header__logo">
                     <Link to="/">
-                        <img src="" alt="Logo" />
+                        <img src={Logo} alt="Logo" />
                     </Link>
                 </div>
                 <div className="header__menu">
@@ -116,23 +113,23 @@ const Header = () => {
                         <div className="header__menu__item header__menu__right__item">
                             <i className="bx bx-search"></i>
                         </div>
-                        <div className="header__menu__item header__menu__right__item">
+                        {/* <div className="header__menu__item header__menu__right__item">
                             <Link to="/heart">
                                 <i className="bx bx-heart"></i>
                                 <span className="cart__item-qty">{totalHeart}</span>
                             </Link>
-                        </div>
+                        </div> */}
                         <div className="header__menu__item header__menu__right__item">
                             <Link to="/cart">
                                 <i className="bx bx-shopping-bag"></i>
                                 <span className="cart__item-qty">{totalProducts}</span>
                             </Link>
                         </div>
-                        <div className="header__menu__item header__menu__right__item">
+                        {/* <div className="header__menu__item header__menu__right__item">
                             <Link to="/user">    
                                 <i className="bx bx-user"></i>
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

@@ -1,27 +1,31 @@
 const colors = [
     {
         display: "ホワイト",
-        color: "white"
+        color: "ホワイト"
     },
     {
         display: "ピンク",
-        color: "pink"
+        color: "ピンク"
     },
     {
         display: "ブラック",
-        color: "black"
+        color: "ブラック"
     },
     {
         display: "グレー",
-        color: "gray"
+        color: "グレー"
+    },
+    {
+        display: "green",
+        color: "green"
     },
     {
         display: "オレンジ",
-        color: "orange"
+        color: "オレンジ"
     },
     {
         display: "ブル",
-        color: "blue"
+        color: "ブル"
     }
 ]
 

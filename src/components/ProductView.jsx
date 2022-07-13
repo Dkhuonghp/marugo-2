@@ -43,6 +43,8 @@ const ProductView = props => {
 
     const [quantity, setQuantity] = useState(1)
 
+    const [checkSize, setCheckSize] = useState("checksize")
+
     const updateQuantity = (type) => {
         if (type === 'plus') {
             setQuantity(quantity + 1)
@@ -86,6 +88,44 @@ const ProductView = props => {
 
         return true
     }
+    const checkSaved = () => {
+        if (color === undefined) {
+            return true
+        }
+
+        if (size === undefined) {
+   
+            return true
+        }
+
+        return true
+    }
+
+    const addSaved = () => {
+        if(checkSaved()) {
+            let newItem_1 = {
+                slug: product.slug,
+                color: color,
+                size: size,
+                price: product.price,
+                quantity: quantity
+            }
+            if (dispatch(addSaved(newItem_1))) {
+                toast.success("カートに追加しました。", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    style: {
+                        fontSize:"1.125rem",
+                        color:"green",
+                        boxShadow:"0 0 10px 4px #aeaeaeae",
+                    },
+                })
+            } else {
+                alert('Fail')
+            }
+        }
+    }
+    
 
     const addToCart = () => {
         if (check()) {
@@ -147,16 +187,16 @@ const ProductView = props => {
                 </div>
                 <div className={`product-description ${descriptionExpand ? 'expand' : ''}`}>
                     <div className="product-description__title">
-                        商品詳細
+                        「商品情報」
                     </div>
                     <div className="product-description__content" dangerouslySetInnerHTML={{__html: product.description}}></div>
-                    <div className="product-description__toggle">
+                    {/* <div className="product-description__toggle">
                         <button size="sm" onClick={() => setDescriptionExpand(!descriptionExpand)}>
                             {
                                 descriptionExpand ? '略' : '詳細'
                             }
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div>
@@ -177,9 +217,12 @@ const ProductView = props => {
                     <div className="product__info__item__list">
                         {
                             product.colors.map((item, index) => (
-                                <div key={index} className={`product__info__item__list__item ${color === item ? 'active' : ''}`} onClick={() => setColor(item)}>
-                                    <div className={`circle`}></div>
-                                </div>
+                                <>
+                                    <div key={index} className={`product__info__item__list__item ${color === item ? 'active' : ''}`} onClick={() => setColor(item)}>
+                                        {/* <div className={`circle`}></div> */}
+                                        <model-viewer src={product.image01}></model-viewer>
+                                    </div>
+                                </>
                             ))
                         }
                     </div>
@@ -193,7 +236,7 @@ const ProductView = props => {
                             product.size.map((item, index) => (
                                 <div key={index} className={`product__border ${size === item ? 'active' : ''}`} onClick={() => setSize(item)}>
                                     <span className="product__info__item__list__item__size">
-                                        {item}
+                                        {item} cm
                                     </span>
                                 </div>
                             ))
@@ -202,7 +245,7 @@ const ProductView = props => {
                 </div>
                 <div className="product__info__item">
                     <div className="product__info__item__title">
-                        数
+                        数量
                     </div>
                     <div className="product__info__item__quantity">
                         <div className="product__info__item__quantity__btn" onClick={() => updateQuantity('minus')}>
@@ -220,22 +263,24 @@ const ProductView = props => {
                     <Button onClick={() => addToCart()}>カートに入れる</Button>
                     
                     <Button onClick={() => goToCart()}>すぐ購入する</Button>
-
-                    <Button onClick={() => setPreviewImg(product.image02)}> VR</Button>
                 </div>
             </div>
             <div className={`product-description mobile ${descriptionExpand ? 'expand' : ''}`}>
                 <div className="product-description__title">
-                    詳しく
+                商品情報
+
+                    {/* <div className="product-description__toggle">
+                        <Button size="sm" onClick={() => setDescriptionExpand(!descriptionExpand)}>
+                            {
+                                descriptionExpand ? '略' : '詳細'
+                            }
+                        </Button>
+                    </div> */}
                 </div>
+                <li>メーカー</li>
+
                 <div className="product-description__content" dangerouslySetInnerHTML={{__html: product.description}}></div>
-                <div className="product-description__toggle">
-                    <Button size="sm" onClick={() => setDescriptionExpand(!descriptionExpand)}>
-                        {
-                            descriptionExpand ? '略' : '詳細'
-                        }
-                    </Button>
-                </div>
+         
             </div>
         </div>
     )

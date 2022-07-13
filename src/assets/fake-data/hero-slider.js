@@ -1,10 +1,10 @@
 const img1 = ("../model/sneaker_3/scene.gltf")
-const img2 = ("../model/sneaker_2/scene.gltf")
+const img2 = ("../model/sneaker_12/scene.gltf")
 const img3 = ("../model/sneaker_1/scene.gltf")
 
 const heroSliderData = [
     {
-        title: "content",
+        title: "New",
         description: "text",
         img: img1,
         // color: "blue",
@@ -14,7 +14,7 @@ const heroSliderData = [
         title: "content",
         description: "text",
         img: img2,
-        path: "/catalog/sneaker_2",
+        path: "/catalog/sneaker_12",
         color: "pink"
     },
     {
