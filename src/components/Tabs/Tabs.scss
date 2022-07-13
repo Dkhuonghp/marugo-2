@@ -1,0 +1,19 @@
+.Tabs {
+    .tabs__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 17px;
+        align-items: center;
+        .tabs__list__head {
+            
+            padding-bottom: 5px;
+            &.active {
+                font-weight: bold;
+                color: #FF5050;
+                border-bottom: 3px solid #FF5050;
+                border-radius: 3px;
+            
+            }
+        }
+    }
+}

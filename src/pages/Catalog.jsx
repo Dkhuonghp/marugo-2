@@ -114,7 +114,7 @@ const Catalog = () => {
             <div className="section__title">カテゴリー</div>
 
             <div className="catalog">
-                {/* <div className="catalog__filter" ref={filterRef}>
+                <div className="catalog__filter" ref={filterRef}>
                     <div className="catalog__filter__close" onClick={() => showHideFilter()}>
                         <i className="bx bx-left-arrow-alt"></i>
                     </div>
@@ -122,6 +122,7 @@ const Catalog = () => {
                         <div className="catalog__filter__widget__title">
                             メーカー
                         </div>
+                        
                         <div className="catalog__filter__widget__content">
                             {
                                 category.map((item, index) => (
@@ -175,36 +176,18 @@ const Catalog = () => {
                         </div>
                     </div>
 
-                    <div className="catalog__filter__widget">
+                    {/* <div className="catalog__filter__widget">
                         <div className="catalog__filter__widget__content">
                             <Button size="sm" onClick={clearFilter}>キャンセル</Button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-                <div className="catalog__filter__toggle">
+                {/* <div className="catalog__filter__toggle">
                     <Button size="sm" onClick={() => showHideFilter()}>bộ lọc</Button>
                 </div> */}
 
                 {/* //! Products */}
                 <div className="catalog__content">
-                    <div className="catalog__filter__widget">
-                        <div className="catalog__filter__widget__title">
-                            メーカー
-                        </div>
-                        <div className="catalog__filter__widget__content">
-                            {
-                                category.map((item, index) => (
-                                    <div key={index} className="catalog__filter__widget__content__item">
-                                        <CheckBox
-                                            label={item.display}
-                                            onChange={(input) => filterSelect("CATEGORY", input.checked, item)}
-                                            checked={filter.category.includes(item.categorySlug)}
-                                        />
-                                    </div>
-                                ))
-                            }
-                        </div>
-                    </div>
                     <InfinityList
                         data={products}
                     />

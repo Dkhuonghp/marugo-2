@@ -47,7 +47,7 @@ const CartItem = (props) => {
             <div className="cart__item" ref={itemRef}>
                 <div className="cart__item__image">
                     {/* <img src={item.product.image01} alt="" /> */}
-                    <model-viewer className="scene__model" src={item.product.image01} camera-controls ar ios-src={item.product.image01}></model-viewer>
+                    <model-viewer className="scene__model" src={item.product.image01} camera-controls ar ios-src={item.product.image02}></model-viewer>
                 </div>
                 <div className="cart__item__info">
                     <div className="cart__item__info__name">

@@ -5,8 +5,6 @@ import { withRouter } from 'react-router'
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux'
 
-import { GLTFModel, AmbientLight, DirectionLight } from "react-3d-viewer";
-// import payment_notify from './payment_notify';
 import { addItem } from '../redux/shopping-cart/cartItemsSlide'
 import { remove } from '../redux/product-modal/productModalSlice'
 
@@ -101,32 +99,6 @@ const ProductView = props => {
         return true
     }
 
-    const addSaved = () => {
-        if(checkSaved()) {
-            let newItem_1 = {
-                slug: product.slug,
-                color: color,
-                size: size,
-                price: product.price,
-                quantity: quantity
-            }
-            if (dispatch(addSaved(newItem_1))) {
-                toast.success("カートに追加しました。", {
-                    position: "top-center",
-                    autoClose: 5000,
-                    style: {
-                        fontSize:"1.125rem",
-                        color:"green",
-                        boxShadow:"0 0 10px 4px #aeaeaeae",
-                    },
-                })
-            } else {
-                alert('Fail')
-            }
-        }
-    }
-    
-
     const addToCart = () => {
         if (check()) {
             let newItem = {
@@ -183,20 +155,7 @@ const ProductView = props => {
                 </div> */}
                 <div className="product__images__main">
                     {/* <img src={previewImg} alt="" /> */}
-                    <model-viewer className="scene__model" src={previewImg} camera-controls ar ios-src={previewImg}></model-viewer>
-                </div>
-                <div className={`product-description ${descriptionExpand ? 'expand' : ''}`}>
-                    <div className="product-description__title">
-                        「商品情報」
-                    </div>
-                    <div className="product-description__content" dangerouslySetInnerHTML={{__html: product.description}}></div>
-                    {/* <div className="product-description__toggle">
-                        <button size="sm" onClick={() => setDescriptionExpand(!descriptionExpand)}>
-                            {
-                                descriptionExpand ? '略' : '詳細'
-                            }
-                        </button>
-                    </div> */}
+                    <model-viewer className="scene__model" src={product.image01} camera-controls ar ios-src={product.image02}></model-viewer>
                 </div>
             </div>
             <div>
@@ -265,23 +224,21 @@ const ProductView = props => {
                     <Button onClick={() => goToCart()}>すぐ購入する</Button>
                 </div>
             </div>
-            <div className={`product-description mobile ${descriptionExpand ? 'expand' : ''}`}>
+            {/* <div className={`product-description mobile ${descriptionExpand ? 'expand' : ''}`}>
                 <div className="product-description__title">
-                商品情報
+                    商品情報
 
-                    {/* <div className="product-description__toggle">
+                    <div className="product-description__toggle">
                         <Button size="sm" onClick={() => setDescriptionExpand(!descriptionExpand)}>
                             {
                                 descriptionExpand ? '略' : '詳細'
                             }
                         </Button>
-                    </div> */}
+                    </div>
                 </div>
-                <li>メーカー</li>
-
                 <div className="product-description__content" dangerouslySetInnerHTML={{__html: product.description}}></div>
          
-            </div>
+            </div> */}
         </div>
     )
 }
